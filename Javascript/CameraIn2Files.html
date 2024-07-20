@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ 
+    <style>
+        div {
+            width: 500px;
+            height: 400px;
+            border: 2px solid black;
+            position: relative;
+        }
+ 
+        video { 
+            width: 500px;
+            height: 400px;
+            object-fit: cover;
+        }
+    </style>
+    <script src="CameraIn2Files.js"></script>
+</head>
+ 
+<body>
+ 
+ 
+    <div>
+        <video autoplay id="vid"></video>
+    </div>
+    <br>
+    <table WIDTH=500px>
+        <TR> 
+            <TD> 
+                <button id="BtnStrt" onclick="StartCam()">
+                    Open WebCam
+                </button>
+            </TD>
+            <TD>
+                <button onclick="StopCam()"> Stop Camera</button>
+            </TD>
+        </TR>
+    </table>
+    
+</body>
+
+ 
+</html>
