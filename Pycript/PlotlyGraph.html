@@ -1,0 +1,36 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+    <py-config>
+        packages = ['plotly','numpy','pandas']
+    </py-config>
+</head>
+<body>
+    <div id="helloDiv"></div>
+    <button id="my-button" py-onClick="display_hello()">Click me</button>
+    <div id="chart1"></div>
+    <py-script>
+        import js, json, plotly
+        #import plotly.express as px
+        import plotly.graph_objects as go
+        
+        def select_params(trace, points, selector):
+            display('Hello, World!', target="helloDiv")
+        
+        def display_hello():
+            # this fails because we don't have any implicit target
+            # from event handlers
+            display('hello', target="helloDiv")
+
+        #fig = px.line(x=[1,2, 3], y=[1, 2, 3]) 
+        fig = go.Figure(data=go.Scatter(x=[1,2, 3], y=[1, 2, 3]))
+        fig.data[0].on_click(select_params)
+        graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+        plot = js.Plotly.newPlot("chart1", js.JSON.parse(graphJSON))
+ 
+    </py-script>
+
+</body>
+</html>
