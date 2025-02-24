@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- The css will make the sidebar show and close-->
+     <style>
+        #sidebar {width: 0;
+                  visibility: hidden;}
+        #sidebar.show {width: 180;
+                       visibility: visible;
+                        }
+     </style>
+     <script>
+        function sidebar(){
+            document.getElementById("sidebar").classList.toggle("show");
+        }
+        function Test(){
+            var cont = document.getElementById("Content");
+            cont.innerHTML="Updated page";
+        }
+     </script>
+</head>
+<body>
+    <h1>Sidebar demonstration</h1>
+    <nav id="sidebar">
+        <h4>First label</h4>
+        <h4>second label</h4>
+        <button onclick="Test()">Click</button>
+        
+    </nav>
+    <p id="Content"> Default page</p>
+    <button onclick="sidebar()">Call Sidebar</button>
+</body>
+</html>
