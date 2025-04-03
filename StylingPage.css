@@ -1,0 +1,42 @@
+nav{
+    background-color: lightcyan;
+}
+
+div{
+    position: absolute;
+    top:200px;
+    left:180px;
+    border: solid;
+    height: 120px;
+    width: 240px;
+}
+
+#Lb1{
+    position: absolute;
+    top:20px;
+    left:20px;
+}
+
+#Lb2{
+    position:absolute;
+    top:20px;
+    left:80px;
+    font-size: 18;
+}
+
+#Lb3{
+    position: absolute;
+    top:50px;
+    left: 40px;
+}
+#Lb4{
+    position: absolute;
+    top: 80px;
+    left: 2px;
+
+}
+#Lb5{
+    position:absolute;
+    top:80px;
+    left:80px;
+}
