@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf8">
+        <meta lang="en">
+        
+    </head>
+    <body>
+        <form id="DataSrc">
+            <label>Nome</label>
+            <input type="text" name="nome" width="100">
+            <br>
+            <label>idade</label>
+            <input type="number" name="Idade" width="5">
+            <br>
+            <label>Sexo</label>
+            <input type="radio" name="Sex" value="Masculino">Masculino
+            <input type="radio" name="Sex" value="Feminino">Feminino
+            <br>
+            <button onclick="Extract()">Submit</button>
+        </form>
+        <script >
+          function Extract(){
+          var Formu= document.getElementById("DataSrc");
+          let Data = new FormData(document.getElementById("DataSrc"));
+          console.log(Data);
+
+}
+        </script>
+    </body>
+</html>
