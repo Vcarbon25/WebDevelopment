@@ -17,15 +17,24 @@
             <input type="radio" name="Sex" value="Masculino">Masculino
             <input type="radio" name="Sex" value="Feminino">Feminino
             <br>
-            <button onclick="Extract()">Submit</button>
+            <button onclick="Extract()">Submit and Download</button>
         </form>
         <script >
+          let Data={};
           function Extract(){
-          var Formu= document.getElementById("DataSrc");
-          let Data = new FormData(document.getElementById("DataSrc"));
+        //get data from form
+          Data = new FormData(document.getElementById("DataSrc")); //get the form data
           console.log(Data);
 
-}
+          //download data
+           var forDownload = JSON.stringify(Object.fromEntries(Data));
+           var a = document.createElement('a');
+           var file = new Blob( [forDownload], {type: "text/plain"});
+           a.href = URL.createObjectURL(file);
+           a.download = 'Saida.json';
+           a.click();
+
+            }
         </script>
     </body>
 </html>
