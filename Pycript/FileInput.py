@@ -13,6 +13,8 @@ async def open_file(fl):
     FstFile = files.item(0)
     dados :bytes =await read_file(FstFile)
     print(f"file data: {dados}")
+    title = document.getElementById("FileTitle")
+    title.innerText = FstFile.name
     SaidaDados = document.getElementById("out")
     SaidaDados.innerText = dados
 
