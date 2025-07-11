@@ -2,11 +2,12 @@
 
 const DrwInfo=document.getElementById("DrwInfo");
 const Canvas = document.getElementById("CanvasOut");
+const ctx = Canvas.getContext("2d");
 function Drawing(){
      let Dados = new FormData(DrwInfo);
      
      console.log(Dados);
-     let ctx = Canvas.getContext("2d");
+     
      let opc = Dados.get("shape");
      ctx.fillStyle=Dados.get("Colr");
      ctx.lineWidth=5; //this line controls the brush thickness
@@ -39,11 +40,11 @@ function Drawing(){
                var Yo = Dados.get("Yo");
                var radius = Dados.get('X1');
                var angle =Dados.get("Y1");
-               if (angle=='') {
+               if (angle=='') { // to draw the full circle
                     ctx.arc(Xo,Yo,radius,0,2*Math.PI);
                     ctx.stroke();
                }
-               else{
+               else{ //to draw an incomplete circle
                     ctx.arc(Xo,Yo,radius,0, 1*Math.PI,false);
                     ctx.stroke()
                }
@@ -52,4 +53,8 @@ function Drawing(){
                break;
      }
 
+     }
+
+     function ClearAll(){
+          ctx.clearRect(0,0,Canvas.width,Canvas.height);
      }
