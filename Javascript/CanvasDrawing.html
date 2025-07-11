@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf8">
+        
+    </head>
+    <body>
+        <h1>Draw in canvas bellow</h1>
+        <canvas  width="700" height="350" id="CanvasOut"></canvas>
+        <form id="DrwInfo">
+             <input type="color" name="Colr"></input>
+             <br>
+            <label>Xo: </label>
+            <input type="number" name="Xo"></input>
+            <label>X1 / radius: </label>
+            <input type="number" name="X1"></inout>
+            <br>
+            <label>Yo: </label>
+            <input type="number" name="Yo"></input>
+            <label>Y1: </label>
+            <input type="number" name="Y1"></inout>
+            <br>
+            <label>forma</label>
+            <br>
+           
+            <input type="radio" name="shape" value="rectangle">Rectangle</input>>
+            <input type="radio" name="shape" value="line">Linha</input>
+            <input type="radio" name="shape" value="circle">Circulo</input>
+
+
+            <br>
+            
+
+        </form>
+        <button onclick="Drawing()">Submit</button>
+        <script src="CanvasDrawing.js"></script>
+    </body>
+</html>
